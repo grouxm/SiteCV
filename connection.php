@@ -61,19 +61,12 @@
 	
 						<form action="login.php" name="login" role="form" class="form-horizontal" method="post" accept-charset="utf-8">
 							<div class="form-group">
-								<div class="col-md-8"><input name="username" placeholder="Identifiant" class="form-control" type="text" id="UserUsername"/></div>
-							</div>
-
-							<div class="form-group">
-								<div class="col-md-8"><input name="password" placeholder="Mot de passe" class="form-control" type="password" id="UserPassword"/></div>
-							</div>
-
-							<div class="form-group">
-								<div class="col-md-offset-0 col-md-8"><input class="btn btn-success btn btn-success" type="submit" value="Connexion"/></div>
+								<div class="col-md-8"><input name="username" placeholder="Identifiant" class="form-control" type="text" id="UserUsername"/><br/></div>
+								<div class="col-md-8"><input name="password" placeholder="Mot de passe" class="form-control" type="password" id="UserPassword"/><br/></div>
+								<div class="col-md-offset-0 col-md-8"><input class="btn btn-success btn btn-success" type="submit" value="Connexion"/><br/></div>
 							</div>
 
 						</form>
-						<p class="credits">Développé par <a href="#" target="_blank">Maxime Rovati</a>.</p>
 						
 					</div>
 				</div>
