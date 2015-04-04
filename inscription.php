@@ -21,7 +21,7 @@
 		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato:400,700,300" />
 		
 		<!-- JS/ Jquery & Bootstrap -->
-		<script type="text/javascript" src="registerValidation.js"></script>
+		<script type="text/javascript" src="validation.js"></script>
 		<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 		<script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     </head>
@@ -47,7 +47,7 @@
 		echo "Erreur, veuillez contactez l'administrateur pour lui signaler ce problème";
 	}
 	?>
-	
+
     <!-- Le corps -->
     <div class="container">
 	<div class="row">
@@ -59,21 +59,16 @@
 	
 						<h1>Inscription</h1>
 						<h2>Renseignez vos informations pour vous inscrire</h2>
-	
-						<form action="register.php" name="login" role="form" class="form-horizontal" method="post" accept-charset="utf-8" data-toggle="validator">
+						
+						<form action="register.php" name="login" role="form" class="form-horizontal" onsubmit="return validateForm()" method="post" accept-charset="utf-8" data-toggle="validator">
 							<div class="form-group">
-								<div class="col-md-8"><input name="firstName" placeholder="Nom" class="form-control" type="text"/><br/></div>
-								<div class="col-md-8"><input name="name" placeholder="Prénom" class="form-control" type="text"/><br/></div>
-								<div class="col-md-8"><input name="address" placeholder="addresse" class="form-control" type="text"/><br/></div>
-								<div class="col-md-8"><input name="city" placeholder="Ville" class="form-control" type="text"/><br/></div>
-								<div class="col-md-8"><input name="postalCode" placeholder="code postal" class="form-control" type="text"/><br/></div>
-								<div class="col-md-8"><input name="country" placeholder="Pays" class="form-control" type="text"/><br/></div>
-								<div class="col-md-8"><input name="phoneNumber" placeholder="Telephone" class="form-control" type="text"/><br/></div>
-								<div class="col-md-8"><input name="dateOfBirth" placeholder="Date de naissance, ex: 2000-01-30" class="form-control" type="text"/><br/></div>
-								<div class="col-md-8"><input type="email" id="inputEmail" name="username" placeholder="email" class="form-control"><br/></div>
-								<div class="col-md-8"><input name="password" placeholder="Mot de passe" class="form-control" type="password" id="UserPassword"/><br/></div>
-								<div class="col-md-8"><input name="passwordConfirm" placeholder="Confirmer le mot de passe" class="form-control" type="password" id="UserPassword"/><br/></div>
-								<div class="col-md-offset-0 col-md-8"><input class="btn btn-success btn btn-success" name="boutonInscription" type="submit" value="Inscription"/></div>
+								<div class="col-md-8"><input name="name" placeholder="Nom" type="text"/><br/><br/></div>
+								<div class="col-md-8"><input name="firstName" placeholder="Prénom" type="text"/><br/><br/></div>
+								<div class="col-md-8"><input name="dateOfBirth" placeholder="Date de naissance (yyyy-mm-dd)" type="date" min="1950-01-01"/><br/><br/></div>
+								<div class="col-md-8"><input type="email" name="email" placeholder="email"/><br/><br/></div>
+								<div class="col-md-8"><input name="password" placeholder="Mot de passe" type="password" id="UserPassword"/><br/><br/></div>
+								<div class="col-md-8"><input name="passwordConfirm" placeholder="Confirmer le mot de passe" type="password" id="UserPassword"/><br/><br/></</div>
+								<div class="col-md-offset-0 col-md-8"><input id="send" class="btn btn-success" name="boutonInscription" type="submit" value="Inscription"/></div>
 							</div>
 						</form>
 						

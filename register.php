@@ -13,23 +13,18 @@
 		die('Erreur : '.$e->getMessage());
 	}
 	
-    if (empty($_POST['username']) || empty($_POST['password']) || empty($_POST['passwordConfirm'])) { //Oublie d'un champ
+    if (empty($_POST['email']) || empty($_POST['password']) || empty($_POST['passwordConfirm'])) { //Oublie d'un champ
         $message = '<p>une erreur s\'est produite pendant votre inscription.
 		Vous devez remplir tous les champs correctement</p>
 		<p>Cliquez <a href="index.php">ici</a> pour revenir</p>';
     }
 	else //On inscrit la personne
     {
-        $query=$db->prepare('INSERT INTO utilisateur VALUES (NULL, :firstName, :name, MD5(:password), :username, :phoneNumber, :dateOfBirth, :country, :city, :postalCode)');
+        $query=$db->prepare('INSERT INTO utilisateur VALUES (NULL, :firstName, :name, MD5(:password), :email)');
         $query->bindValue(':name',$_POST['name'], PDO::PARAM_STR);
         $query->bindValue(':firstName',$_POST['firstName'], PDO::PARAM_STR);
         $query->bindValue(':password',$_POST['password'], PDO::PARAM_STR);
-        $query->bindValue(':username',$_POST['username'], PDO::PARAM_STR);
-        $query->bindValue(':phoneNumber',$_POST['phoneNumber'], PDO::PARAM_STR);
-        $query->bindValue(':dateOfBirth',$_POST['dateOfBirth'], PDO::PARAM_STR);
-        $query->bindValue(':country',$_POST['country'], PDO::PARAM_STR);
-        $query->bindValue(':city',$_POST['city'], PDO::PARAM_STR);
-        $query->bindValue(':postalCode',$_POST['postalCode'], PDO::PARAM_STR);
+        $query->bindValue(':email',$_POST['email'], PDO::PARAM_STR);
 		$query->execute();
         if ($query->rowCount()>0)
 		{

@@ -39,11 +39,3 @@
     .btn {
         transition: all ease-in-out 0.2s;
     }
-    .credits {
-        margin-top: 100px;
-        color: #999;
-        font-size: 12px;
-    }
-    .credits a {
-        color: inherit;
-    }
